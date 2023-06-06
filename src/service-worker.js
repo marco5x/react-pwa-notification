@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 
 // This service worker can be customized!
-// See https://developers.google.com/web/tools/workbox/modules
+// See https://developer.chrome.com/docs/workbox/modules/
 // for the list of available Workbox modules, or add any other
 // code you'd like.
 // You can also remove this file if you'd prefer not to use a
@@ -73,6 +73,6 @@ self.addEventListener("message", (event) => {
 // Any other custom service worker logic can go here.
 self.addEventListener("push", (event) => {
   const { title, message } = event.data.json();
-  console.log(event.data.json());
+  //console.log(event.data.json());
   self.registration.showNotification(title, { body: message });
 });

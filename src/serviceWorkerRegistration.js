@@ -64,12 +64,16 @@ function registerValidSW(swUrl, config) {
           applicationServerKey: vapidKeys.publicKey,
         });
         // Aquí se lo enviamos al servidor
-        await axios.post(
-          "https://notification-web-server.onrender.com/subscription",
-          {
-            pushSubscription,
-          }
-        );
+        try {
+          await axios.post(
+            "https://notification-web-server.onrender.com/subscription",
+            {
+              pushSubscription,
+            }
+          );
+        } catch (error) {
+          console.error(error);
+        }
       });
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
