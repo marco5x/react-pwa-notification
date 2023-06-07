@@ -32,22 +32,28 @@ export const FormNotification = () => {
     >
       <h3 style={{ dysplay: "flex" }}>Mensaje al servidor!!</h3>
       <form onSubmit={handleSubmit}>
-        <label>Titulo: </label>
-        <input
-          type="text"
-          name="title"
-          onChange={handleMesssage}
-          value={message.title}
-        />
+        <label>
+          Titulo:
+          <input
+            placeholder="Titulo de la notificación"
+            type="text"
+            name="title"
+            onChange={handleMesssage}
+            value={message.title}
+          />
+        </label>
         <br />
-        <label>Mensaje: </label>
-        <br />
-        <textarea
-          type="text"
-          name="message"
-          onChange={handleMesssage}
-          value={message.message}
-        />
+        <label>
+          Mensaje:
+          <br />
+          <textarea
+            placeholder="Mensaje de la notificación"
+            type="text"
+            name="message"
+            onChange={handleMesssage}
+            value={message.message}
+          />
+        </label>
         <br />
         <button
           style={{
